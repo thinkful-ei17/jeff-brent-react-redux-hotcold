@@ -23,3 +23,16 @@ start new game
 {
   type:NEW_GAME
 }
+
+React-Redux Implementation:
+1. Set up provider in index.js X
+
+Tackle each action with these steps:
+
+2. Confirm which components need state passed in with connect
+3. Propogate information into components with connect
+4. Add dispatch action methods to components
+  -First console.log value
+  -Then log current value, etc.
+  -Then dispatch value
+
