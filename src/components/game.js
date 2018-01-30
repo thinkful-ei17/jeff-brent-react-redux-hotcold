@@ -16,9 +16,9 @@ export class Game extends React.Component {
   //     correctAnswer: Math.round(Math.random() * 100) + 1
   //   };
 
-  submitGuess(guess) {
-    this.props.dispatch(submitGuess(guess));
-    }
+  // submitGuess(guess) {
+  //   this.props.dispatch(submitGuess(guess));
+  //   }
   
 
   // restartGame() {
@@ -97,7 +97,7 @@ export class Game extends React.Component {
           <GuessSection
             feedback={feedback}
             guessCount={guessCount}
-            onMakeGuess={guess => this.submitGuess(guess)} />
+            onMakeGuess={guess =>  this.props.dispatch(submitGuess(guess))} />
           <StatusSection guesses={guesses} 
             auralStatus={auralStatus}
           />
