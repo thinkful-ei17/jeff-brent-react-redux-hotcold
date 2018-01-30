@@ -1,6 +1,6 @@
-import { newGame, submitGuess } from '../actions';
 import React from 'react';
 import { connect } from 'react-redux';
+import { newGame, submitGuess } from '../actions';
 import GuessSection from './guess-section';
 import Header from './header';
 import InfoSection from './info-section';
@@ -16,7 +16,7 @@ export class Game extends React.Component {
     return (
       <div>
         <Header
-          onRestartGame={() => this.restartGame()}
+          onRestartGame={() => this.props.dispatch(newGame())}
           onGenerateAuralUpdate={() => this.generateAuralUpdate()}
         />
         <main role="main">
@@ -37,9 +37,9 @@ export class Game extends React.Component {
 }
 
 
-export const mapStateToProps = state => ({
+const mapStateToProps = state => ({
   feedback: state.feedback,
-  guesses: [...state.guesses],
+  guesses: state.guesses,
 });
 
 

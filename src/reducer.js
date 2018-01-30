@@ -8,20 +8,18 @@ const initialState = {
 };
 
 const generateFeedback = (guess, answer) => {
-  console.log('GENERATE FEEDBACK FIRED')
-  
   const difference = Math.abs(guess - answer);
 
   if (difference >= 50) {
-    return'You\'re Ice Cold...';
+    return 'You\'re Ice Cold...';
   } else if (difference >= 30) {
     return 'You\'re Cold...';
   } else if (difference >= 10) {
     return 'You\'re Warm.';
   } else if (difference >= 1) {
     return 'You\'re Hot!';
-  } 
-    return 'You got it!';
+  }
+  return 'You got it!';
 };
 
 
@@ -33,7 +31,6 @@ const reducer = (state = initialState, action) => {
         feedback: 'Please enter a valid number',
       });
     }
-    console.log('THIS IS GUESSES ARRAY', guess);
     return Object.assign({}, state, {
       guesses: [...state.guesses, guess],
       feedback: generateFeedback(guess, state.correctAnswer),
