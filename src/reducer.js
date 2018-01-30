@@ -26,19 +26,16 @@ const generateFeedback = (guess, answer) => {
 const reducer = (state = initialState, action) => {
   if (action.type === SUBMIT_GUESS) {
     const guess = parseInt(action.guess, 10);
-    if (Number.isNaN(guess)) {
-      return Object.assign({}, state, {
-        feedback: 'Please enter a valid number',
-      });
-    }
-    return Object.assign({}, state, {
+    return {
+      ...state,
       guesses: [...state.guesses, guess],
       feedback: generateFeedback(guess, state.correctAnswer),
-    });
+    };
   } else if (action.type === NEW_GAME) {
-    return Object.assign({}, initialState, {
+    return {
+      ...initialState,
       correctAnswer: Math.round(Math.random() * 100) + 1,
-    });
+    };
   }
   return state;
 };
