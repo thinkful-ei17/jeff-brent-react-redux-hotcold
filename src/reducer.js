@@ -22,6 +22,7 @@ const generateFeedback = (guess, answer) => {
   return 'You got it!';
 };
 
+// random numb func
 
 const reducer = (state = initialState, action) => {
   if (action.type === SUBMIT_GUESS) {

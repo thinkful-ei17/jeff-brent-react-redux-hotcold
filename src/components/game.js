@@ -16,7 +16,6 @@ export class Game extends React.Component {
     return (
       <div>
         <Header
-          onRestartGame={() => this.props.dispatch(newGame())}
           onGenerateAuralUpdate={() => this.generateAuralUpdate()}
         />
         <main role="main">
@@ -36,6 +35,7 @@ export class Game extends React.Component {
   }
 }
 
+// connect(mapStateToProps, (dispatch) => ({ dispatch }));
 
 const mapStateToProps = state => ({
   feedback: state.feedback,

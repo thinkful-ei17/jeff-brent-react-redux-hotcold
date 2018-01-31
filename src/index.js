@@ -5,12 +5,12 @@ import './reset.css';
 import './index.css';
 
 import store from './store';
-import ConnectedGame from './components/game';
+import GameConnected from './components/game';
 
 
 ReactDOM.render(
   <Provider store={store}>
-    <ConnectedGame />
+    <GameConnected />
   </Provider>,
   document.getElementById('root'),
 );
